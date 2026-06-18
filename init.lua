@@ -902,6 +902,12 @@ do
 
   -- NOTE: You can also specify a branch or a specific commit
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
+  vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter-context' } }
+  require('treesitter-context').setup {
+    mode = 'cursor',
+    max_lines = 6,
+    multiline_threshold = 1,
+  }
 
   -- Ensure basic parsers are installed
   local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
