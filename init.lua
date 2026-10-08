@@ -240,6 +240,12 @@ do
   -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+  vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+  vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+
+  vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+  vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+
   -- [[ Basic Autocommands ]]
   --  See `:help lua-guide-autocommands`
 
@@ -844,7 +850,7 @@ do
       -- rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
-      python = { 'ruff' },
+      python = { 'ruff_format' },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
